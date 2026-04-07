@@ -21,6 +21,7 @@ Replace these parts in derived apps:
 
 ## Philosophy
 
+
 The template stays intentionally narrow. It gives you:
 - deterministic project generation via `XcodeGen`
 - config-driven backend environments via `xcconfig`
