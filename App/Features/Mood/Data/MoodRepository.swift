@@ -2,6 +2,7 @@ import Foundation
 import SwiftData
 
 /// Protocol defining the interface for mood data operations
+@MainActor
 protocol MoodRepositoryProtocol {
     /// Save a new mood entry
     func save(_ entry: MoodEntry) async throws
@@ -54,7 +55,7 @@ final class MoodRepository: MoodRepositoryProtocol {
                 configuration = ModelConfiguration(
                     schema: schema,
                     url: storeURL,
-                    isStoredInMemoryOnly: false
+                    allowsSave: true
                 )
             } else {
                 // Fallback to default container if app group not available
@@ -109,7 +110,7 @@ final class MoodRepository: MoodRepositoryProtocol {
     }
     
     func fetchMostRecent() async throws -> MoodEntry? {
-        let descriptor = FetchDescriptor<MoodEntry>(
+        var descriptor = FetchDescriptor<MoodEntry>(
             sortBy: [SortDescriptor(\.timestamp, order: .reverse)]
         )
         descriptor.fetchLimit = 1

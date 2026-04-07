@@ -1,5 +1,6 @@
-import SwiftUI
+import Combine
 import SwiftData
+import SwiftUI
 
 /// View model for insights calculations
 @MainActor

@@ -1,5 +1,6 @@
-import UIKit
 import CoreHaptics
+import SwiftUI
+import UIKit
 
 // MARK: - Haptic Manager
 
@@ -149,7 +150,8 @@ final class HapticManager {
             // Use CoreHaptics for a richer experience
             do {
                 let pattern = try createWidgetSuccessPattern()
-                try engine.playPattern(from: pattern)
+                let player = try engine.makePlayer(with: pattern)
+                try player.start(atTime: CHHapticTimeImmediate)
             } catch {
                 // Fallback to standard success haptic
                 triggerSuccess()

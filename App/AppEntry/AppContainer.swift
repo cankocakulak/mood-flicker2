@@ -10,6 +10,7 @@ struct AppContainer {
     let keyValueStore: KeyValueStore
     let moodRepository: MoodRepositoryProtocol
 
+    @MainActor
     static func live(bundle: Bundle = .main) -> AppContainer {
         let environment = (try? AppEnvironment.live(bundle: bundle)) ?? .fallback
         let logger = AppLoggerFactory.live(subsystem: "com.cankocakulak.moodflicker2")

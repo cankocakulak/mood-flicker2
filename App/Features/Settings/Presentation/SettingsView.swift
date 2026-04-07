@@ -10,7 +10,7 @@ struct SettingsView: View {
     
     var body: some View {
         List {
-            Section("Data") {
+            Section {
                 ExportDataRow(
                     entryCount: viewModel.entryCount,
                     isExporting: viewModel.isExporting,
@@ -21,6 +21,8 @@ struct SettingsView: View {
                     }
                 )
                 .disabled(viewModel.entryCount == 0 || viewModel.isExporting)
+            } header: {
+                Text("Data")
             } footer: {
                 if viewModel.entryCount == 0 {
                     Text("Add some mood entries to enable export")
@@ -31,7 +33,7 @@ struct SettingsView: View {
                 }
             }
             
-            Section("About") {
+            Section {
                 HStack {
                     Text("App Version")
                     Spacer()
@@ -45,6 +47,8 @@ struct SettingsView: View {
                     Text(buildNumber)
                         .foregroundStyle(.secondary)
                 }
+            } header: {
+                Text("About")
             }
         }
         .navigationTitle("Settings")
@@ -146,7 +150,8 @@ struct ShareSheet: UIViewControllerRepresentable {
 
 // MARK: - Mock Repository for Previews
 
-private actor MockMoodRepository: MoodRepositoryProtocol {
+@MainActor
+private final class MockMoodRepository: MoodRepositoryProtocol {
     func save(_ entry: MoodEntry) async throws {}
     func delete(_ entry: MoodEntry) async throws {}
     func fetchAll() async throws -> [MoodEntry] { [] }
