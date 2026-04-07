@@ -1,0 +1,1203 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01E6EEF0911735C4C6309494 /* LogMoodIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36467BA35A7E99FB0FAA0461 /* LogMoodIntent.swift */; };
+		04C617EF933600988D76BA62 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2010BF8AE4E451809B51695 /* RootView.swift */; };
+		062DFE9566D0CD4AA6175FD6 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A612F5951119622EB48744 /* SettingsViewModel.swift */; };
+		0ABF0ED702689758B5E12981 /* CSVExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617FC8A8D60FFD08E665CFBF /* CSVExportService.swift */; };
+		1D54B5D76D432DEE34EF1E4B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D17434D4DEF63C851C5C7 /* SettingsView.swift */; };
+		1EE63DEEC96D8EDB380E0BE8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1131EAB381F6F990F9CA151D /* WidgetKit.framework */; };
+		2D24646A94692DB2FFFFA477 /* AppEnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B670051D66E9C6463A0F2EF9 /* AppEnvironmentTests.swift */; };
+		3925D7C7396BB77C139D1148 /* TemplateAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D473AA54F233F1C22B68E26D /* TemplateAppUITests.swift */; };
+		3CC4290F54F8E18D776AC647 /* MoodFlicker2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FD5CB67FB3D892C92D970 /* MoodFlicker2App.swift */; };
+		451C086562199F8E96EE1E3B /* MoodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45B00F2E86B321F8C89B63 /* MoodRepository.swift */; };
+		4BF439FE7B4ACFD043106B29 /* AppIntents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3D35A3E49FA05914A648ED3 /* AppIntents.framework */; };
+		51E72A353D9C3478492C44F5 /* HealthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DA89873A2E64931FC585C2 /* HealthAPI.swift */; };
+		5346B190336DFA74B7AD65EE /* BuildConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58ACEBA7C8812AECC9AB3AF /* BuildConfiguration.swift */; };
+		535BE265EE6A033F6E423755 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE6CB3932417A3B99767E9 /* AppEnvironment.swift */; };
+		58E37C8AC0D46BA2EBCC7A21 /* AuthProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18790A91E8C81966E9F52D93 /* AuthProviding.swift */; };
+		66BF7536EDE3B135940301F6 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17854B0E715772FDEF35002E /* NetworkClient.swift */; };
+		681E8F8A1F2F09E4A26AC006 /* MoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61C04E7C5FC5CA59AEE86E /* MoodEntry.swift */; };
+		6DB7FC1EAA8DDF47E0F48835 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF4AF71929475E7EB29DBD6 /* Logger.swift */; };
+		6EC9C2C8CBA08157FE96992F /* HealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5F672C6832ACA3A14ABC00 /* HealthStatus.swift */; };
+		6F8787B7170539A664526EF8 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD83C9B615C9183912656C1 /* InsightsView.swift */; };
+		7299E48D0A479FAD384E349D /* MoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61C04E7C5FC5CA59AEE86E /* MoodEntry.swift */; };
+		78A58B17CB99CC8D8DB71951 /* URLSessionNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F23CB4EE558007ACF5C795 /* URLSessionNetworkClient.swift */; };
+		8035DDA62E77DDB4ADB05202 /* InsightsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96475F5D5A88EDC9EF6F5A24 /* InsightsViewModel.swift */; };
+		8488D499EADB892D05085BA2 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1B629D286006C680AE8AA5 /* Charts.framework */; };
+		87CC31FFCD60F0D9A952EF2D /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71521EB333FB31FD217C4E /* HTTPMethod.swift */; };
+		923D12AE593FDEECD1051870 /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB92CF2FDDBBDD1A238C536 /* EndpointTests.swift */; };
+		97894103A1900CE0B7F52752 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D383EC1973C42A66AA8DE /* TodayViewModel.swift */; };
+		9AE6B3AFBF8652F66F9AC7DE /* TrendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C430F2DACCFDA7845AAF90 /* TrendViewModel.swift */; };
+		9E95FD135032ECE187C57E1B /* TrendChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAF032E424EE544DAAC084E /* TrendChartView.swift */; };
+		A74060DE0D42DA40FA55DD8F /* HealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43133B23129D5E98B195AD6 /* HealthViewModel.swift */; };
+		AF1750F766A34AD42B69318D /* HealthViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02555B75BF7C63130A71602B /* HealthViewModelTests.swift */; };
+		BBAA2DA176750A0B770360E6 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A49019F05AA97969F5DACB0C /* SwiftUI.framework */; };
+		C01E5362F273562E85AD4A79 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C728BE8160DFFB87C459709 /* AppContainer.swift */; };
+		C7F58EA6931930F0E7C5C047 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38105D6D0B3F0461C149E91A /* Preview Assets.xcassets */; };
+		CA0115C0F83F3B74488E5ACF /* MoodFlicker2Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84516308D085AA538F82E1 /* MoodFlicker2Widget.swift */; };
+		D16EE23F5A751A59E5EA23C7 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6603660CB16CFE3B54FBD7F2 /* LocalStore.swift */; };
+		D23721A22D4E71B6821054C7 /* MoodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45B00F2E86B321F8C89B63 /* MoodRepository.swift */; };
+		D413E54E3B59A038FC96E1CD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E492AA9A3F82EA8BC79E96 /* Endpoint.swift */; };
+		D9CC08999A5C009D25F32E0B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC7EC5BC575E96EBDC23645 /* Theme.swift */; };
+		DC411B176D44222372A6C5FB /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D88E7169AFF75860D2799B8 /* TodayView.swift */; };
+		DE2A835EAF302CE881B769E7 /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C6F711A5BCBA2C718D6A0E /* MockNetworkClient.swift */; };
+		E0551A257F5F0FBC0D48A31F /* MoodFlicker2WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729F8626084D66C879ADF51 /* MoodFlicker2WidgetBundle.swift */; };
+		E2128331FBD09EEDEF4B7BE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC4D59EDAA009B201FE6E7FA /* Assets.xcassets */; };
+		E4580C7BC83067C23EF57C22 /* SwiftData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871E44B48ED373F7EEABAE62 /* SwiftData.framework */; };
+		F3792811E353E95E85C0D510 /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9E25EA785BB813CEBA9F81 /* HealthView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8F2885E6BC0110C22CD6288D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 911FD4BE9380170454738959 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B3B2C5B33C138F94377DBAD;
+			remoteInfo = MoodFlicker2;
+		};
+		AB223B41114B7147465C90D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 911FD4BE9380170454738959 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B3B2C5B33C138F94377DBAD;
+			remoteInfo = MoodFlicker2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02555B75BF7C63130A71602B /* HealthViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewModelTests.swift; sourceTree = "<group>"; };
+		03DE6CB3932417A3B99767E9 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		0B9371DE23FAC4C9B4D0C091 /* MoodFlicker2WidgetExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = MoodFlicker2WidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1131EAB381F6F990F9CA151D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		115D17434D4DEF63C851C5C7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		11D0D1FEFB282D384EA5E854 /* MoodFlicker2Tests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MoodFlicker2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		13C6F711A5BCBA2C718D6A0E /* MockNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkClient.swift; sourceTree = "<group>"; };
+		14C430F2DACCFDA7845AAF90 /* TrendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewModel.swift; sourceTree = "<group>"; };
+		17854B0E715772FDEF35002E /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		18790A91E8C81966E9F52D93 /* AuthProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProviding.swift; sourceTree = "<group>"; };
+		1BD3730AC1AF773BBF009A25 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		1D45B00F2E86B321F8C89B63 /* MoodRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodRepository.swift; sourceTree = "<group>"; };
+		28E492AA9A3F82EA8BC79E96 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		2D88E7169AFF75860D2799B8 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		36467BA35A7E99FB0FAA0461 /* LogMoodIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMoodIntent.swift; sourceTree = "<group>"; };
+		38105D6D0B3F0461C149E91A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3F1FD5CB67FB3D892C92D970 /* MoodFlicker2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodFlicker2App.swift; sourceTree = "<group>"; };
+		41100BAC7C9BDDAC64337898 /* MoodFlicker2UITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MoodFlicker2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		43E676C5930A405B9817F44A /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
+		4D948DCA18223945BAD2AA51 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		5F5F672C6832ACA3A14ABC00 /* HealthStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStatus.swift; sourceTree = "<group>"; };
+		617FC8A8D60FFD08E665CFBF /* CSVExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVExportService.swift; sourceTree = "<group>"; };
+		6603660CB16CFE3B54FBD7F2 /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
+		673FB074C555537AB1715FA0 /* MoodFlicker2WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoodFlicker2WidgetExtension.entitlements; sourceTree = "<group>"; };
+		7BD83C9B615C9183912656C1 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
+		7C728BE8160DFFB87C459709 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		86DA89873A2E64931FC585C2 /* HealthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAPI.swift; sourceTree = "<group>"; };
+		871E44B48ED373F7EEABAE62 /* SwiftData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftData.framework; path = System/Library/Frameworks/SwiftData.framework; sourceTree = SDKROOT; };
+		8A1B629D286006C680AE8AA5 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = System/Library/Frameworks/Charts.framework; sourceTree = SDKROOT; };
+		8CB92CF2FDDBBDD1A238C536 /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
+		8FAF032E424EE544DAAC084E /* TrendChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendChartView.swift; sourceTree = "<group>"; };
+		96475F5D5A88EDC9EF6F5A24 /* InsightsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsViewModel.swift; sourceTree = "<group>"; };
+		A49019F05AA97969F5DACB0C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A729F8626084D66C879ADF51 /* MoodFlicker2WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodFlicker2WidgetBundle.swift; sourceTree = "<group>"; };
+		AD84516308D085AA538F82E1 /* MoodFlicker2Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodFlicker2Widget.swift; sourceTree = "<group>"; };
+		ADF4AF71929475E7EB29DBD6 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		AFC7EC5BC575E96EBDC23645 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		B2010BF8AE4E451809B51695 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		B43133B23129D5E98B195AD6 /* HealthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewModel.swift; sourceTree = "<group>"; };
+		B670051D66E9C6463A0F2EF9 /* AppEnvironmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironmentTests.swift; sourceTree = "<group>"; };
+		BE71521EB333FB31FD217C4E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		C1F23CB4EE558007ACF5C795 /* URLSessionNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkClient.swift; sourceTree = "<group>"; };
+		C21D383EC1973C42A66AA8DE /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
+		C58ACEBA7C8812AECC9AB3AF /* BuildConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfiguration.swift; sourceTree = "<group>"; };
+		CC4D59EDAA009B201FE6E7FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE61C04E7C5FC5CA59AEE86E /* MoodEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntry.swift; sourceTree = "<group>"; };
+		D473AA54F233F1C22B68E26D /* TemplateAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAppUITests.swift; sourceTree = "<group>"; };
+		DD9E25EA785BB813CEBA9F81 /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
+		F3A612F5951119622EB48744 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		F3D35A3E49FA05914A648ED3 /* AppIntents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppIntents.framework; path = System/Library/Frameworks/AppIntents.framework; sourceTree = SDKROOT; };
+		F67734967D07FBF81BC32302 /* MoodFlicker2.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MoodFlicker2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0B90867166D8DA6C7CCF569 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4580C7BC83067C23EF57C22 /* SwiftData.framework in Frameworks */,
+				1EE63DEEC96D8EDB380E0BE8 /* WidgetKit.framework in Frameworks */,
+				BBAA2DA176750A0B770360E6 /* SwiftUI.framework in Frameworks */,
+				4BF439FE7B4ACFD043106B29 /* AppIntents.framework in Frameworks */,
+				8488D499EADB892D05085BA2 /* Charts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08F5653981ACFBEC77951BC8 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				115D17434D4DEF63C851C5C7 /* SettingsView.swift */,
+				F3A612F5951119622EB48744 /* SettingsViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		0E2BE635F9D3E01B13145D69 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8CB92CF2FDDBBDD1A238C536 /* EndpointTests.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1527A929D110180318AE05BE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2C695DECA97BFE1DC18E0C43 /* Auth */,
+				479E2B9230DD22ABE7932E57 /* Logging */,
+				5550909476BBA05165CF0357 /* Networking */,
+				DE4CF25C1E7009251F72C3AD /* Persistence */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		16678B7AB6978CF64CF01F27 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				7BD83C9B615C9183912656C1 /* InsightsView.swift */,
+				96475F5D5A88EDC9EF6F5A24 /* InsightsViewModel.swift */,
+				2D88E7169AFF75860D2799B8 /* TodayView.swift */,
+				C21D383EC1973C42A66AA8DE /* TodayViewModel.swift */,
+				8FAF032E424EE544DAAC084E /* TrendChartView.swift */,
+				14C430F2DACCFDA7845AAF90 /* TrendViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		1B50E785DFCD8EA74585D783 /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				CE61FFC19EF7B73E30DA777E /* Data */,
+				EE11E2FC8E8E8F76E8EF5A0E /* Domain */,
+				626BA87E25E0C811B268524F /* Presentation */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		1BFF4467D55513A190C41608 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F67734967D07FBF81BC32302 /* MoodFlicker2.app */,
+				11D0D1FEFB282D384EA5E854 /* MoodFlicker2Tests.xctest */,
+				41100BAC7C9BDDAC64337898 /* MoodFlicker2UITests.xctest */,
+				0B9371DE23FAC4C9B4D0C091 /* MoodFlicker2WidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2B9BBFE8415460E902DAA2FE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CC4D59EDAA009B201FE6E7FA /* Assets.xcassets */,
+				CF544BB4AEA2DE7E23EDFB69 /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2C695DECA97BFE1DC18E0C43 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				18790A91E8C81966E9F52D93 /* AuthProviding.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		33AAB9E823BE221FBDD88323 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CE61C04E7C5FC5CA59AEE86E /* MoodEntry.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		368BDB48051A8FF0CDD0683C /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				D473AA54F233F1C22B68E26D /* TemplateAppUITests.swift */,
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
+		38AF532F2CCB55E308BBF6EB /* Mood */ = {
+			isa = PBXGroup;
+			children = (
+				AE77D93952FE89F08EE4E8F6 /* Data */,
+				33AAB9E823BE221FBDD88323 /* Domain */,
+				16678B7AB6978CF64CF01F27 /* Presentation */,
+			);
+			path = Mood;
+			sourceTree = "<group>";
+		};
+		3B21B454FC3B4AF6A253FDFD /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				1BD3730AC1AF773BBF009A25 /* Debug.xcconfig */,
+				4D948DCA18223945BAD2AA51 /* Release.xcconfig */,
+				43E676C5930A405B9817F44A /* Staging.xcconfig */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		42232C6212C47B503EE640B7 /* AppEntry */ = {
+			isa = PBXGroup;
+			children = (
+				7C728BE8160DFFB87C459709 /* AppContainer.swift */,
+				3F1FD5CB67FB3D892C92D970 /* MoodFlicker2App.swift */,
+				B2010BF8AE4E451809B51695 /* RootView.swift */,
+			);
+			path = AppEntry;
+			sourceTree = "<group>";
+		};
+		43785500D303B69E253A18D3 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				AFC7EC5BC575E96EBDC23645 /* Theme.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		479E2B9230DD22ABE7932E57 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				ADF4AF71929475E7EB29DBD6 /* Logger.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		5550909476BBA05165CF0357 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				28E492AA9A3F82EA8BC79E96 /* Endpoint.swift */,
+				BE71521EB333FB31FD217C4E /* HTTPMethod.swift */,
+				17854B0E715772FDEF35002E /* NetworkClient.swift */,
+				C1F23CB4EE558007ACF5C795 /* URLSessionNetworkClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		6014656E89EAB3B557973894 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				13C6F711A5BCBA2C718D6A0E /* MockNetworkClient.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		626BA87E25E0C811B268524F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DD9E25EA785BB813CEBA9F81 /* HealthView.swift */,
+				B43133B23129D5E98B195AD6 /* HealthViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		6C9B934586449ACC7571E2BD /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				03DE6CB3932417A3B99767E9 /* AppEnvironment.swift */,
+				C58ACEBA7C8812AECC9AB3AF /* BuildConfiguration.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		737B6DAE0B716F3E537667C0 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6014656E89EAB3B557973894 /* Support */,
+				AB375C1C2173B4BBD948A7DE /* Unit */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		9ED318398B3728E3EC922396 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B670051D66E9C6463A0F2EF9 /* AppEnvironmentTests.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		AB375C1C2173B4BBD948A7DE /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				9ED318398B3728E3EC922396 /* Config */,
+				D7B884876F0D829F52E00D35 /* Health */,
+				0E2BE635F9D3E01B13145D69 /* Networking */,
+			);
+			path = Unit;
+			sourceTree = "<group>";
+		};
+		AE5ECEC6E40E6DF36C3DCCD8 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				43785500D303B69E253A18D3 /* DesignSystem */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		AE77D93952FE89F08EE4E8F6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				617FC8A8D60FFD08E665CFBF /* CSVExportService.swift */,
+				1D45B00F2E86B321F8C89B63 /* MoodRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B5EA6FBD7E63CDDB4009D0F9 = {
+			isa = PBXGroup;
+			children = (
+				FF6FFB94C37FA2E3903C24AB /* App */,
+				3B21B454FC3B4AF6A253FDFD /* Configs */,
+				737B6DAE0B716F3E537667C0 /* Tests */,
+				368BDB48051A8FF0CDD0683C /* UITests */,
+				BD35197551C72E7FC2191CF7 /* Widget */,
+				F7511534F27C912420286DE1 /* Frameworks */,
+				1BFF4467D55513A190C41608 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BD35197551C72E7FC2191CF7 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				36467BA35A7E99FB0FAA0461 /* LogMoodIntent.swift */,
+				AD84516308D085AA538F82E1 /* MoodFlicker2Widget.swift */,
+				A729F8626084D66C879ADF51 /* MoodFlicker2WidgetBundle.swift */,
+				673FB074C555537AB1715FA0 /* MoodFlicker2WidgetExtension.entitlements */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		CE61FFC19EF7B73E30DA777E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				86DA89873A2E64931FC585C2 /* HealthAPI.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CF544BB4AEA2DE7E23EDFB69 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				38105D6D0B3F0461C149E91A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D7B884876F0D829F52E00D35 /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				02555B75BF7C63130A71602B /* HealthViewModelTests.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		DCC61657197CD7FA7F155E0F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				08F5653981ACFBEC77951BC8 /* Presentation */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DE4CF25C1E7009251F72C3AD /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				6603660CB16CFE3B54FBD7F2 /* LocalStore.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		EE11E2FC8E8E8F76E8EF5A0E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				5F5F672C6832ACA3A14ABC00 /* HealthStatus.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F7511534F27C912420286DE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3D35A3E49FA05914A648ED3 /* AppIntents.framework */,
+				8A1B629D286006C680AE8AA5 /* Charts.framework */,
+				871E44B48ED373F7EEABAE62 /* SwiftData.framework */,
+				A49019F05AA97969F5DACB0C /* SwiftUI.framework */,
+				1131EAB381F6F990F9CA151D /* WidgetKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F98C7401E8ABD0660AD79E29 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				1B50E785DFCD8EA74585D783 /* Health */,
+				38AF532F2CCB55E308BBF6EB /* Mood */,
+				DCC61657197CD7FA7F155E0F /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		FF6FFB94C37FA2E3903C24AB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				42232C6212C47B503EE640B7 /* AppEntry */,
+				6C9B934586449ACC7571E2BD /* Config */,
+				1527A929D110180318AE05BE /* Core */,
+				F98C7401E8ABD0660AD79E29 /* Features */,
+				2B9BBFE8415460E902DAA2FE /* Resources */,
+				AE5ECEC6E40E6DF36C3DCCD8 /* Shared */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B3B2C5B33C138F94377DBAD /* MoodFlicker2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C851A00C9A51EF509E0AF85 /* Build configuration list for PBXNativeTarget "MoodFlicker2" */;
+			buildPhases = (
+				FD9517A899E8D24364E28BDD /* Sources */,
+				ED3CB2040402B5F350D17B0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoodFlicker2;
+			packageProductDependencies = (
+			);
+			productName = MoodFlicker2;
+			productReference = F67734967D07FBF81BC32302 /* MoodFlicker2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		48C674217CDBB09A53D071A4 /* MoodFlicker2WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEBA2A1F73C4E540B15F0D2A /* Build configuration list for PBXNativeTarget "MoodFlicker2WidgetExtension" */;
+			buildPhases = (
+				7CD6E078A00C89E16A73FC11 /* Sources */,
+				D0B90867166D8DA6C7CCF569 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoodFlicker2WidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = MoodFlicker2WidgetExtension;
+			productReference = 0B9371DE23FAC4C9B4D0C091 /* MoodFlicker2WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		5521FCCD108390B02FAF6FCC /* MoodFlicker2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D94C8EBB99999CE9C95FD7BA /* Build configuration list for PBXNativeTarget "MoodFlicker2Tests" */;
+			buildPhases = (
+				1B673867005AA5679551DB9D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				953C26DC14D814378D513ABF /* PBXTargetDependency */,
+			);
+			name = MoodFlicker2Tests;
+			packageProductDependencies = (
+			);
+			productName = MoodFlicker2Tests;
+			productReference = 11D0D1FEFB282D384EA5E854 /* MoodFlicker2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9A28C4198B309A7F2A012AD6 /* MoodFlicker2UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D95ADCD123E7EDDD71AF783 /* Build configuration list for PBXNativeTarget "MoodFlicker2UITests" */;
+			buildPhases = (
+				44A8FE826DE14D1DC48B5F83 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B2365D9F29F4E9D819EB39B /* PBXTargetDependency */,
+			);
+			name = MoodFlicker2UITests;
+			packageProductDependencies = (
+			);
+			productName = MoodFlicker2UITests;
+			productReference = 41100BAC7C9BDDAC64337898 /* MoodFlicker2UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		911FD4BE9380170454738959 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					1B3B2C5B33C138F94377DBAD = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					48C674217CDBB09A53D071A4 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					5521FCCD108390B02FAF6FCC = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					9A28C4198B309A7F2A012AD6 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1B3B2C5B33C138F94377DBAD;
+					};
+				};
+			};
+			buildConfigurationList = 98403D7D7393E89CD9E36E73 /* Build configuration list for PBXProject "MoodFlicker2" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = B5EA6FBD7E63CDDB4009D0F9;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1BFF4467D55513A190C41608 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B3B2C5B33C138F94377DBAD /* MoodFlicker2 */,
+				5521FCCD108390B02FAF6FCC /* MoodFlicker2Tests */,
+				9A28C4198B309A7F2A012AD6 /* MoodFlicker2UITests */,
+				48C674217CDBB09A53D071A4 /* MoodFlicker2WidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED3CB2040402B5F350D17B0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2128331FBD09EEDEF4B7BE1 /* Assets.xcassets in Resources */,
+				C7F58EA6931930F0E7C5C047 /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B673867005AA5679551DB9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D24646A94692DB2FFFFA477 /* AppEnvironmentTests.swift in Sources */,
+				923D12AE593FDEECD1051870 /* EndpointTests.swift in Sources */,
+				AF1750F766A34AD42B69318D /* HealthViewModelTests.swift in Sources */,
+				DE2A835EAF302CE881B769E7 /* MockNetworkClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44A8FE826DE14D1DC48B5F83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3925D7C7396BB77C139D1148 /* TemplateAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CD6E078A00C89E16A73FC11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01E6EEF0911735C4C6309494 /* LogMoodIntent.swift in Sources */,
+				681E8F8A1F2F09E4A26AC006 /* MoodEntry.swift in Sources */,
+				CA0115C0F83F3B74488E5ACF /* MoodFlicker2Widget.swift in Sources */,
+				E0551A257F5F0FBC0D48A31F /* MoodFlicker2WidgetBundle.swift in Sources */,
+				D23721A22D4E71B6821054C7 /* MoodRepository.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD9517A899E8D24364E28BDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C01E5362F273562E85AD4A79 /* AppContainer.swift in Sources */,
+				535BE265EE6A033F6E423755 /* AppEnvironment.swift in Sources */,
+				58E37C8AC0D46BA2EBCC7A21 /* AuthProviding.swift in Sources */,
+				5346B190336DFA74B7AD65EE /* BuildConfiguration.swift in Sources */,
+				0ABF0ED702689758B5E12981 /* CSVExportService.swift in Sources */,
+				D413E54E3B59A038FC96E1CD /* Endpoint.swift in Sources */,
+				87CC31FFCD60F0D9A952EF2D /* HTTPMethod.swift in Sources */,
+				51E72A353D9C3478492C44F5 /* HealthAPI.swift in Sources */,
+				6EC9C2C8CBA08157FE96992F /* HealthStatus.swift in Sources */,
+				F3792811E353E95E85C0D510 /* HealthView.swift in Sources */,
+				A74060DE0D42DA40FA55DD8F /* HealthViewModel.swift in Sources */,
+				6F8787B7170539A664526EF8 /* InsightsView.swift in Sources */,
+				8035DDA62E77DDB4ADB05202 /* InsightsViewModel.swift in Sources */,
+				D16EE23F5A751A59E5EA23C7 /* LocalStore.swift in Sources */,
+				6DB7FC1EAA8DDF47E0F48835 /* Logger.swift in Sources */,
+				7299E48D0A479FAD384E349D /* MoodEntry.swift in Sources */,
+				3CC4290F54F8E18D776AC647 /* MoodFlicker2App.swift in Sources */,
+				451C086562199F8E96EE1E3B /* MoodRepository.swift in Sources */,
+				66BF7536EDE3B135940301F6 /* NetworkClient.swift in Sources */,
+				04C617EF933600988D76BA62 /* RootView.swift in Sources */,
+				1D54B5D76D432DEE34EF1E4B /* SettingsView.swift in Sources */,
+				062DFE9566D0CD4AA6175FD6 /* SettingsViewModel.swift in Sources */,
+				D9CC08999A5C009D25F32E0B /* Theme.swift in Sources */,
+				DC411B176D44222372A6C5FB /* TodayView.swift in Sources */,
+				97894103A1900CE0B7F52752 /* TodayViewModel.swift in Sources */,
+				9E95FD135032ECE187C57E1B /* TrendChartView.swift in Sources */,
+				9AE6B3AFBF8652F66F9AC7DE /* TrendViewModel.swift in Sources */,
+				78A58B17CB99CC8D8DB71951 /* URLSessionNetworkClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7B2365D9F29F4E9D819EB39B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B3B2C5B33C138F94377DBAD /* MoodFlicker2 */;
+			targetProxy = AB223B41114B7147465C90D7 /* PBXContainerItemProxy */;
+		};
+		953C26DC14D814378D513ABF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B3B2C5B33C138F94377DBAD /* MoodFlicker2 */;
+			targetProxy = 8F2885E6BC0110C22CD6288D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0770846DF9055B722EEF042F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Widget/MoodFlicker2WidgetExtension.entitlements;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_CFBundleDisplayName = "MoodFlicker2 Widget";
+				INFOPLIST_KEY_NSExtension = "<dict>\n  <key>NSExtensionPointIdentifier</key>\n  <string>com.apple.widgetkit-extension</string>\n</dict>\n";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID).widget$(BUNDLE_ID_SUFFIX)";
+				PRODUCT_NAME = MoodFlicker2Widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		10384020B65D9B90DBAA64AD /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID).uitests$(BUNDLE_ID_SUFFIX)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MoodFlicker2;
+			};
+			name = Staging;
+		};
+		1C03E4098FE06861DEC6D4F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Widget/MoodFlicker2WidgetExtension.entitlements;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_CFBundleDisplayName = "MoodFlicker2 Widget";
+				INFOPLIST_KEY_NSExtension = "<dict>\n  <key>NSExtensionPointIdentifier</key>\n  <string>com.apple.widgetkit-extension</string>\n</dict>\n";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID).widget$(BUNDLE_ID_SUFFIX)";
+				PRODUCT_NAME = MoodFlicker2Widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		40DE33FA6021EA5446D3585C /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43E676C5930A405B9817F44A /* Staging.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_AppAPIBaseURL = "$(API_BASE_URL)";
+				INFOPLIST_KEY_AppAPIKey = "$(API_KEY)";
+				INFOPLIST_KEY_AppEnvironmentName = "$(APP_ENVIRONMENT_NAME)";
+				INFOPLIST_KEY_AppWebSocketURL = "$(WEB_SOCKET_URL)";
+				INFOPLIST_KEY_CFBundleDevelopmentRegion = en;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_DISPLAY_NAME)";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)$(BUNDLE_ID_SUFFIX)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Staging;
+		};
+		66FD5D2C43C08759F9B885F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID).tests$(BUNDLE_ID_SUFFIX)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoodFlicker2.app/MoodFlicker2";
+			};
+			name = Debug;
+		};
+		70D62FD28D50EA269D2E2A14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID).uitests$(BUNDLE_ID_SUFFIX)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MoodFlicker2;
+			};
+			name = Release;
+		};
+		76C2F9F3A123915A291A1003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D948DCA18223945BAD2AA51 /* Release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_AppAPIBaseURL = "$(API_BASE_URL)";
+				INFOPLIST_KEY_AppAPIKey = "$(API_KEY)";
+				INFOPLIST_KEY_AppEnvironmentName = "$(APP_ENVIRONMENT_NAME)";
+				INFOPLIST_KEY_AppWebSocketURL = "$(WEB_SOCKET_URL)";
+				INFOPLIST_KEY_CFBundleDevelopmentRegion = en;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_DISPLAY_NAME)";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)$(BUNDLE_ID_SUFFIX)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		7E9BE9EF74CBBDDE3BD8D0B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID).uitests$(BUNDLE_ID_SUFFIX)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MoodFlicker2;
+			};
+			name = Debug;
+		};
+		84967CAA38D021A4B4C09E71 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MoodFlicker2.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_NAME = MoodFlicker2;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Staging;
+		};
+		87DEF733B82FF966C7836364 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MoodFlicker2.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_NAME = MoodFlicker2;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8F07722A309FBE52BBA32D54 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Widget/MoodFlicker2WidgetExtension.entitlements;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_CFBundleDisplayName = "MoodFlicker2 Widget";
+				INFOPLIST_KEY_NSExtension = "<dict>\n  <key>NSExtensionPointIdentifier</key>\n  <string>com.apple.widgetkit-extension</string>\n</dict>\n";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID).widget$(BUNDLE_ID_SUFFIX)";
+				PRODUCT_NAME = MoodFlicker2Widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Staging;
+		};
+		943A00FBFE029D74028D2455 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID).tests$(BUNDLE_ID_SUFFIX)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoodFlicker2.app/MoodFlicker2";
+			};
+			name = Staging;
+		};
+		A7E373B67B8E675A25050020 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MoodFlicker2.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_NAME = MoodFlicker2;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E368CA6F751D4383A60D0B2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BD3730AC1AF773BBF009A25 /* Debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_AppAPIBaseURL = "$(API_BASE_URL)";
+				INFOPLIST_KEY_AppAPIKey = "$(API_KEY)";
+				INFOPLIST_KEY_AppEnvironmentName = "$(APP_ENVIRONMENT_NAME)";
+				INFOPLIST_KEY_AppWebSocketURL = "$(WEB_SOCKET_URL)";
+				INFOPLIST_KEY_CFBundleDevelopmentRegion = en;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_DISPLAY_NAME)";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)$(BUNDLE_ID_SUFFIX)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F47B81D5DEFA24022DF897A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID).tests$(BUNDLE_ID_SUFFIX)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoodFlicker2.app/MoodFlicker2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7C851A00C9A51EF509E0AF85 /* Build configuration list for PBXNativeTarget "MoodFlicker2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7E373B67B8E675A25050020 /* Debug */,
+				87DEF733B82FF966C7836364 /* Release */,
+				84967CAA38D021A4B4C09E71 /* Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7D95ADCD123E7EDDD71AF783 /* Build configuration list for PBXNativeTarget "MoodFlicker2UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E9BE9EF74CBBDDE3BD8D0B6 /* Debug */,
+				70D62FD28D50EA269D2E2A14 /* Release */,
+				10384020B65D9B90DBAA64AD /* Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		98403D7D7393E89CD9E36E73 /* Build configuration list for PBXProject "MoodFlicker2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E368CA6F751D4383A60D0B2C /* Debug */,
+				76C2F9F3A123915A291A1003 /* Release */,
+				40DE33FA6021EA5446D3585C /* Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D94C8EBB99999CE9C95FD7BA /* Build configuration list for PBXNativeTarget "MoodFlicker2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66FD5D2C43C08759F9B885F6 /* Debug */,
+				F47B81D5DEFA24022DF897A0 /* Release */,
+				943A00FBFE029D74028D2455 /* Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EEBA2A1F73C4E540B15F0D2A /* Build configuration list for PBXNativeTarget "MoodFlicker2WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C03E4098FE06861DEC6D4F2 /* Debug */,
+				0770846DF9055B722EEF042F /* Release */,
+				8F07722A309FBE52BBA32D54 /* Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 911FD4BE9380170454738959 /* Project object */;
+}

@@ -1,12 +1,14 @@
 import SwiftUI
+import SwiftData
 
 @main
-struct TemplateAppApp: App {
+struct MoodFlicker2App: App {
     private let container = AppContainer.live()
 
     var body: some Scene {
         WindowGroup {
-            RootView(viewModel: HealthViewModel(service: container.healthAPI, logger: container.logger))
+            RootView(container: container)
         }
+        .modelContainer(for: MoodEntry.self)
     }
 }

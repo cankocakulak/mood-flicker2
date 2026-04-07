@@ -1,4 +1,5 @@
 import Foundation
+import SwiftData
 
 struct AppContainer {
     let environment: AppEnvironment
@@ -7,10 +8,11 @@ struct AppContainer {
     let healthAPI: HealthAPI
     let logger: AppLogger
     let keyValueStore: KeyValueStore
+    let moodRepository: MoodRepositoryProtocol
 
     static func live(bundle: Bundle = .main) -> AppContainer {
         let environment = (try? AppEnvironment.live(bundle: bundle)) ?? .fallback
-        let logger = AppLoggerFactory.live(subsystem: "com.example.templateapp")
+        let logger = AppLoggerFactory.live(subsystem: "com.cankocakulak.moodflicker2")
         let authProvider = StaticTokenAuthProvider(token: nil)
         let keyValueStore = UserDefaultsStore(userDefaults: .standard)
         let networkClient = URLSessionNetworkClient(
@@ -18,6 +20,7 @@ struct AppContainer {
             authProvider: authProvider,
             logger: logger)
         let healthAPI = LiveHealthAPI(client: networkClient)
+        let moodRepository = try! MoodRepository()
 
         return AppContainer(
             environment: environment,
@@ -25,6 +28,7 @@ struct AppContainer {
             networkClient: networkClient,
             healthAPI: healthAPI,
             logger: logger,
-            keyValueStore: keyValueStore)
+            keyValueStore: keyValueStore,
+            moodRepository: moodRepository)
     }
 }

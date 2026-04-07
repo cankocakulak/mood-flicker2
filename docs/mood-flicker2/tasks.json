@@ -1,0 +1,311 @@
+{
+  "project": "MoodFlicker2",
+  "branchName": "codex/mood-flicker2-v1",
+  "description": "A lightweight iOS mood tracker with widget-first check-ins, trend visualization, and data export — capturing moods in under 5 seconds while providing meaningful insights over time.",
+  "docsPath": "docs/mood-flicker2",
+  "bootstrapContext": {
+    "workspacePath": "/Users/mcan/mood-flicker2",
+    "baseBranch": "main",
+    "workingBranch": "codex/mood-flicker2-v1",
+    "validationBaseline": {
+      "prepareCommand": "./Scripts/bootstrap.sh",
+      "buildCommand": "xcodebuild -project ios-boilerplate.xcodeproj -scheme TemplateApp -destination 'platform=iOS Simulator,name=iPhone 16' build",
+      "testCommand": "./Scripts/test.sh",
+      "runCommand": "xcodebuild -project ios-boilerplate.xcodeproj -scheme TemplateApp -destination 'platform=iOS Simulator,name=iPhone 16' run",
+      "smokeCommand": "xcodebuild -project ios-boilerplate.xcodeproj -scheme TemplateApp -destination 'platform=iOS Simulator,name=iPhone 16' build",
+      "smokeScenario": "App builds successfully without errors"
+    }
+  },
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "parentStoryId": "MF-008",
+      "lineage": ["MF-008"],
+      "title": "Project Setup & iOS 17+ Configuration",
+      "description": "Configure the project for iOS 17+ deployment, rename TemplateApp to MoodFlicker2, update bundle identifier, and ensure all build settings align with iOS 17+ requirements. Update project.yml with new app identity and regenerate Xcode project.",
+      "acceptanceCriteria": [
+        "Deployment target is set to iOS 17.0 or higher in project.yml",
+        "App target is renamed from TemplateApp to MoodFlicker2",
+        "Bundle identifier updated to com.cankocakulak.moodflicker2",
+        "Project generates successfully via Scripts/generate_project.sh",
+        "App builds without errors after renaming"
+      ],
+      "dependencies": [],
+      "validation": {
+        "level": "build",
+        "runtimeCritical": false,
+        "commands": [
+          "./Scripts/generate_project.sh",
+          "xcodebuild -project MoodFlicker2.xcodeproj -scheme MoodFlicker2 -destination 'platform=iOS Simulator,name=iPhone 16' build"
+        ],
+        "miniScenarios": [],
+        "scenarios": ["Project builds successfully with new identity"],
+        "notes": "This is foundational - all other tasks depend on proper project setup. Must complete before any feature work."
+      },
+      "priority": 1,
+      "status": "done",
+      "notes": "Implementation Boundary: Project configuration and identity only. PRD refs: PR-009. Bootstrap handoff: Use working branch codex/mood-flicker2-v1."
+    },
+    {
+      "id": "TASK-002",
+      "parentStoryId": "MF-002",
+      "lineage": ["MF-002"],
+      "title": "SwiftData Model & Local Storage Layer",
+      "description": "Create the MoodEntry SwiftData model with mood value (Int 1-5), timestamp (Date), and optional tag (String). Implement CRUD operations, data persistence layer, and query capabilities. Replace existing LocalStore placeholder.",
+      "acceptanceCriteria": [
+        "MoodEntry model defined with @Model macro",
+        "Model includes: id (UUID), moodValue (Int), timestamp (Date), tag (String?, optional)",
+        "Data persists across app launches using SwiftData",
+        "Query by date range returns results in chronological order",
+        "Works without internet connection"
+      ],
+      "dependencies": ["TASK-001"],
+      "validation": {
+        "level": "build",
+        "runtimeCritical": true,
+        "commands": [
+          "xcodebuild -project MoodFlicker2.xcodeproj -scheme MoodFlicker2 -destination 'platform=iOS Simulator,name=iPhone 16' build"
+        ],
+        "miniScenarios": [
+          "App launches without SwiftData migration errors",
+          "Can create and save a MoodEntry instance"
+        ],
+        "scenarios": [
+          "Data persists after force-quit and relaunch",
+          "Query returns entries in correct order"
+        ],
+        "notes": "Critical foundation for all data-dependent features. Model design must support future iCloud sync without migration."
+      },
+      "priority": 2,
+      "status": "done",
+      "notes": "Implementation Boundary: Data model and persistence layer only. No UI. PRD refs: PR-008."
+    },
+    {
+      "id": "TASK-003",
+      "parentStoryId": "MF-001",
+      "lineage": ["MF-001"],
+      "title": "Widget Extension & Quick Check-In",
+      "description": "Create WidgetKit extension with interactive widget showing 5 emoji buttons (😔 😟 😐 🙂 😄). Implement App Intent for handling mood selection, widget refresh after check-in, haptic feedback, and relative time display ('Just now', '5m ago').",
+      "acceptanceCriteria": [
+        "Widget extension added to project with proper target configuration",
+        "Widget displays 5 emoji buttons horizontally",
+        "Tapping emoji saves mood entry via App Intent",
+        "Widget shows checkmark confirmation (0.5s) after tap",
+        "Widget displays 'Last check-in: Just now' with relative time updates",
+        "Haptic feedback triggered on widget interaction"
+      ],
+      "dependencies": ["TASK-001", "TASK-002"],
+      "validation": {
+        "level": "runtime",
+        "runtimeCritical": true,
+        "commands": [
+          "xcodebuild -project MoodFlicker2.xcodeproj -scheme MoodFlicker2 -destination 'platform=iOS Simulator,name=iPhone 16' build",
+          "xcodebuild -project MoodFlicker2.xcodeproj -scheme MoodFlicker2WidgetExtension -destination 'platform=iOS Simulator,name=iPhone 16' build"
+        ],
+        "miniScenarios": [
+          "Widget extension builds without errors",
+          "Widget preview renders in Xcode canvas"
+        ],
+        "scenarios": [
+          "Widget tap creates mood entry visible in app",
+          "Widget updates timestamp after check-in",
+          "Widget shows checkmark confirmation for 0.5s after tap"
+        ],
+        "notes": "Requires iOS 17+ for interactive widgets. Widget refresh may have system-imposed rate limits."
+      },
+      "priority": 3,
+      "status": "done",
+      "notes": "COMPLETED: Widget checkmark confirmation (0.5s) implemented. MoodEntryTimelineEntry now has showingConfirmation flag and confirmationMoodValue. LogMoodIntent sets confirmation state before saving and schedules refresh to clear after 0.5s. ConfirmationView shows large emoji with green circle and 'Logged!' text."
+    },
+    {
+      "id": "FIX-TASK-003-01",
+      "parentStoryId": "MF-001",
+      "lineage": ["MF-001"],
+      "title": "Implement haptic feedback for widget interactions",
+      "description": "Widget App Intents cannot directly trigger haptics. Implement haptic feedback coordination between widget and main app. Options: (1) Main app detects new widget entry and triggers haptic on next launch, (2) Use CoreHaptics if available, (3) Document as known WidgetKit limitation.",
+      "acceptanceCriteria": [
+        "Haptic feedback triggered when user logs mood via widget",
+        "Light impact feedback (UIImpactFeedbackStyle.light) on successful mood log",
+        "Feedback works when app is in foreground or background"
+      ],
+      "dependencies": ["TASK-003"],
+      "validation": {
+        "level": "runtime",
+        "runtimeCritical": false,
+        "commands": [
+          "xcodebuild -project MoodFlicker2.xcodeproj -scheme MoodFlicker2 -destination 'platform=iOS Simulator,name=iPhone 16' build"
+        ],
+        "miniScenarios": [],
+        "scenarios": [
+          "Haptic feedback triggers on widget mood log"
+        ],
+        "notes": "WidgetKit limitation: App Intents cannot directly trigger haptics. Requires main app coordination."
+      },
+      "priority": 3,
+      "status": "pending",
+      "notes": "FOLLOW-UP TASK: Created per review. Widget haptics require main app detection of widget entries."
+    },
+    {
+      "id": "TASK-004",
+      "parentStoryId": "MF-003",
+      "lineage": ["MF-003"],
+      "title": "Today View UI",
+      "description": "Create the Today tab showing today's mood entries sorted by time (newest first). Include entry display with emoji, time, and optional tag, pull-to-refresh, swipe-to-delete, and friendly empty state with widget guidance.",
+      "acceptanceCriteria": [
+        "Today view displays list of today's entries sorted by time (newest first)",
+        "Each entry shows emoji, exact time (e.g., '2:30 PM'), and optional tag",
+        "Empty state shows illustration and 'Add the MoodFlicker2 widget' guidance",
+        "Pull-to-refresh updates the list",
+        "Swipe left reveals delete action with confirmation"
+      ],
+      "dependencies": ["TASK-001", "TASK-002"],
+      "validation": {
+        "level": "runtime",
+        "runtimeCritical": true,
+        "commands": [
+          "xcodebuild -project MoodFlicker2.xcodeproj -scheme MoodFlicker2 -destination 'platform=iOS Simulator,name=iPhone 16' build"
+        ],
+        "miniScenarios": [
+          "Today tab loads without crashes",
+          "Empty state displays when no entries"
+        ],
+        "scenarios": [
+          "Entries display with correct emoji and time",
+          "Delete action removes entry and updates list"
+        ],
+        "notes": "Empty state illustration should be simple, calm, and on-brand."
+      },
+      "priority": 4,
+      "status": "done",
+      "notes": "Implementation Boundary: Today tab UI only. Does NOT include charts or insights. PRD refs: PR-004."
+    },
+    {
+      "id": "TASK-005",
+      "parentStoryId": "MF-004",
+      "lineage": ["MF-004"],
+      "title": "Context Tags Feature",
+      "description": "Implement optional context tags for mood entries. Add 'Add Context' button to entries, tag selector with 5 preset options (Work, Sleep, Social, Health, Weather), tag persistence, toggle behavior to remove tags, and prompt to add context to recent widget entries.",
+      "acceptanceCriteria": [
+        "Entries without tags show 'Add Context' button",
+        "Tag selector shows 5 preset options as pill buttons",
+        "Selecting a tag attaches it to entry immediately",
+        "Tapping existing tag removes it (toggle)",
+        "Prompt appears when opening app within 5 minutes of widget check-in"
+      ],
+      "dependencies": ["TASK-002", "TASK-004"],
+      "validation": {
+        "level": "runtime",
+        "runtimeCritical": false,
+        "commands": [
+          "xcodebuild -project MoodFlicker2.xcodeproj -scheme MoodFlicker2 -destination 'platform=iOS Simulator,name=iPhone 16' build"
+        ],
+        "miniScenarios": [],
+        "scenarios": [
+          "Tag can be added to entry",
+          "Tag can be removed by tapping",
+          "Tag persists across app launches"
+        ],
+        "notes": "Tag selector should use subtle pill buttons, not full-screen modal."
+      },
+      "priority": 5,
+      "status": "done",
+      "notes": "Implementation Boundary: Tag UI and persistence only. Does NOT include custom tags (P1) or tag insights (P2). PRD refs: PR-003."
+    },
+    {
+      "id": "TASK-006",
+      "parentStoryId": "MF-005",
+      "lineage": ["MF-005"],
+      "title": "7-Day Trend Chart",
+      "description": "Implement 7-day trend chart using Swift Charts. Display mood values over time with daily averages, handle sparse data gracefully, add tap interaction to show exact date and value, and apply mood color scheme (blue-gray to coral gradient).",
+      "acceptanceCriteria": [
+        "7-day chart displays on Today or Insights tab",
+        "Chart shows daily average mood values",
+        "Sparse data handled with clear date range indication",
+        "Tapping data point shows exact date and average value",
+        "Chart uses mood color scheme for visual consistency"
+      ],
+      "dependencies": ["TASK-001", "TASK-002"],
+      "validation": {
+        "level": "runtime",
+        "runtimeCritical": false,
+        "commands": [
+          "xcodebuild -project MoodFlicker2.xcodeproj -scheme MoodFlicker2 -destination 'platform=iOS Simulator,name=iPhone 16' build"
+        ],
+        "miniScenarios": [],
+        "scenarios": [
+          "Chart renders with 7 days of data",
+          "Chart handles fewer than 7 days gracefully",
+          "Tap interaction shows data point details"
+        ],
+        "notes": "Use Swift Charts (iOS 16+) for native look. Chart should be readable at glance."
+      },
+      "priority": 6,
+      "status": "done",
+      "notes": "Implementation Boundary: Chart visualization only. Does NOT include insights text or monthly view (P1). PRD refs: PR-005."
+    },
+    {
+      "id": "TASK-007",
+      "parentStoryId": "MF-006",
+      "lineage": ["MF-006"],
+      "title": "Basic Insights",
+      "description": "Implement basic insights cards showing 'Most Common Mood' and 'Best Day of Week' when user has 7+ entries. Include encouraging message with progress indicator for users with fewer entries. Insights should recalculate automatically when data updates.",
+      "acceptanceCriteria": [
+        "Most Common Mood card shows emoji and percentage (7+ entries)",
+        "Best Day card shows day of week with highest average mood",
+        "Fewer than 7 entries shows 'Check in for X more days' message",
+        "Insights recalculate automatically when new entries added",
+        "Copy is friendly and non-clinical"
+      ],
+      "dependencies": ["TASK-002", "TASK-006"],
+      "validation": {
+        "level": "runtime",
+        "runtimeCritical": false,
+        "commands": [
+          "xcodebuild -project MoodFlicker2.xcodeproj -scheme MoodFlicker2 -destination 'platform=iOS Simulator,name=iPhone 16' build"
+        ],
+        "miniScenarios": [],
+        "scenarios": [
+          "Insights calculate correctly with 7+ entries",
+          "Encouraging message shows with fewer entries",
+          "Insights update after adding new entry"
+        ],
+        "notes": "Keep calculations simple and fast. Handle sparse data carefully."
+      },
+      "priority": 7,
+      "status": "done",
+      "notes": "Implementation Boundary: Insights calculation and cards only. Does NOT include correlation insights (P2). PRD refs: PR-006."
+    },
+    {
+      "id": "TASK-008",
+      "parentStoryId": "MF-007",
+      "lineage": ["MF-007"],
+      "title": "CSV Export",
+      "description": "Implement CSV export functionality in Settings. Generate CSV with columns: Date, Time, Mood (1-5), Mood Emoji, Tag. Present iOS share sheet with filename 'MoodFlicker_Export_YYYY-MM-DD.csv'. Handle large datasets (1000+ entries) efficiently.",
+      "acceptanceCriteria": [
+        "Export Data button in Settings (disabled when no entries)",
+        "CSV generated with correct columns and UTF-8 encoding",
+        "Share sheet appears with properly named file",
+        "Export confirmation shown after sharing",
+        "Handles 1000+ entries without memory issues"
+      ],
+      "dependencies": ["TASK-001", "TASK-002"],
+      "validation": {
+        "level": "runtime",
+        "runtimeCritical": false,
+        "commands": [
+          "xcodebuild -project MoodFlicker2.xcodeproj -scheme MoodFlicker2 -destination 'platform=iOS Simulator,name=iPhone 16' build"
+        ],
+        "miniScenarios": [],
+        "scenarios": [
+          "CSV file generates with correct format",
+          "Share sheet presents with correct filename",
+          "Large dataset exports without crash"
+        ],
+        "notes": "CSV uses comma delimiter with header row. Test with large dataset."
+      },
+      "priority": 8,
+      "status": "done",
+      "notes": "Implementation Boundary: CSV export only. Does NOT include PDF export (P1). PRD refs: PR-007."
+    }
+  ]
+}

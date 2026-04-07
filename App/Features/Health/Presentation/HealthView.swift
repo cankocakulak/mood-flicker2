@@ -43,7 +43,7 @@ struct HealthView: View {
                     .foregroundStyle(.secondary)
             }
         }
-        .navigationTitle("Template App")
+        .navigationTitle("Health")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Reload") {

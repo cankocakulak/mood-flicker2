@@ -1,0 +1,112 @@
+# ViberMode Product to Code
+# Composed workflow: product-to-spec (with spec review loop) -> bootstrap -> spec-to-code
+
+input idea: "2-5 saniyede mood check-in, trendler, widget ve export içeren hafif iOS mood tracker"
+input workspace_path: "/Users/mcan/mood-flicker2"
+input repo_mode: "existing-repo"
+input repo_url: "https://github.com/cankocakulak/mood-flicker2"
+input base_branch: "main"
+input working_branch: "codex/mood-flicker2-v1"
+input project_name: "mood-flicker2"
+input stack: "swiftui-ios"
+input platform: "mobile"
+input analysis_artifact: ""
+input constraints: ""
+input direction: ""
+input audience: "günlük mood takibi yapmak isteyen bireysel kullanıcılar"
+input product_context: "hafif, hızlı, frictionless günlük check-in deneyimi"
+input branding_context: "sakin, modern, iOS-native"
+input personas: "gün içinde ruh halini hızlıca kaydetmek isteyen kullanıcı"
+input branch_prefix: "codex/"
+
+let workflow_workspace = "/Users/mcan/.openclaw/agents/vibermode-orchestrator/workspace"
+
+agent stage-runner:
+  prompt: """You execute exactly one stage of the composed ViberMode product-to-code workflow inside the vibermode-orchestrator workspace.
+
+Before acting:
+1. Read the referenced workflow file and preserve its intent.
+2. Read any referenced skill files and artifacts that exist.
+3. Resolve all project paths against workspace_path, never against the OpenClaw workspace.
+
+Execution rules:
+- Run only the requested stage in each session.
+- Preserve artifact naming and paths exactly.
+- Do not skip prerequisite artifacts.
+- If an optional input is empty, ignore it rather than inventing detail.
+"""
+
+let product_spec_run = session: stage-runner
+  prompt: """Run Stage 1: product-to-spec.
+
+Workflow file:
+- {workflow_workspace}/workflows/product-to-spec/product-to-spec.prose
+
+Inputs:
+- idea: {idea}
+- target_repo: {workspace_path}
+- project_name: {project_name}
+- analysis_artifact: {analysis_artifact}
+- constraints: {constraints}
+- direction: {direction}
+- audience: {audience}
+- product_context: {product_context}
+- platform: {platform}
+- branding_context: {branding_context}
+- personas: {personas}
+
+Stop after spec-review.md is written with APPROVED or BLOCKED."""
+
+let bootstrap_run = session: stage-runner
+  prompt: """Run Stage 2: bootstrap.
+
+Workflow file:
+- {workflow_workspace}/workflows/bootstrap/bootstrap.prose
+
+Upstream stage result:
+- product_spec_run: {product_spec_run}
+
+Inputs:
+- workspace_path: {workspace_path}
+- repo_mode: {repo_mode}
+- repo_url: {repo_url}
+- base_branch: {base_branch}
+- working_branch: {working_branch}
+- project_name: {project_name}
+- stack: {stack}
+- platform: {platform}
+- analysis_artifact: {analysis_artifact}
+- constraints: {constraints}
+
+Rules:
+- If `product_spec_run` clearly reports BLOCKED, do not run bootstrap. Return BLOCKED instead.
+- Only continue when Stage 1 reached spec-review approval.
+
+Stop after bootstrap.md is written or the stage is explicitly blocked."""
+
+let implementation_run = session: stage-runner
+  prompt: """Run Stage 3: spec-to-code.
+
+Workflow file:
+- {workflow_workspace}/workflows/spec-to-code/spec-to-code.prose
+
+Upstream stage results:
+- product_spec_run: {product_spec_run}
+- bootstrap_run: {bootstrap_run}
+
+Inputs:
+- target_repo: {workspace_path}
+- project_name: {project_name}
+- analysis_artifact: {analysis_artifact}
+- branch_prefix: {branch_prefix}
+
+Rules:
+- If `product_spec_run` clearly reports BLOCKED, do not run spec-to-code. Return BLOCKED instead.
+- If `bootstrap_run` clearly reports BLOCKED, do not run spec-to-code. Return BLOCKED instead.
+- Only continue when spec review is approved and bootstrap succeeded.
+
+Use the existing docs produced by earlier stages and continue until the spec-to-code workflow reaches its own stop condition."""
+
+output product_spec_output = "{workspace_path}/docs/{project_name}"
+output bootstrap_output = "{workspace_path}/docs/{project_name}/bootstrap.md"
+output implementation_output = "{workspace_path}/docs/{project_name}"
