@@ -39,10 +39,8 @@ struct LogMoodIntent: AppIntent {
             // Save timestamp for "add context" prompt
             saveWidgetCheckInTimestamp()
             
-            // Trigger haptic feedback via notification
-            await MainActor.run {
-                HapticFeedbackHelper.triggerSuccess()
-            }
+            // Mark haptic as pending - will trigger when main app becomes active
+            markWidgetHapticPending()
             
             // Schedule another refresh to clear confirmation after 0.5s
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -79,6 +77,12 @@ struct LogMoodIntent: AppIntent {
         let defaults = UserDefaults(suiteName: "group.com.cankocakulak.moodflicker2")
         defaults?.set(Date(), forKey: "lastWidgetCheckIn")
     }
+    
+    private func markWidgetHapticPending() {
+        let defaults = UserDefaults(suiteName: "group.com.cankocakulak.moodflicker2")
+        defaults?.set(true, forKey: "widgetHapticPending")
+        defaults?.set(Date(), forKey: "widgetHapticTimestamp")
+    }
 }
 
 // MARK: - Intent Errors
@@ -97,12 +101,4 @@ enum IntentError: Error, CustomLocalizedStringResourceConvertible {
     }
 }
 
-// MARK: - Haptic Feedback Helper
 
-@MainActor
-struct HapticFeedbackHelper {
-    static func triggerSuccess() {
-        // Haptic feedback is handled by the system for widget interactions
-        // This is a placeholder for any additional feedback if needed
-    }
-}

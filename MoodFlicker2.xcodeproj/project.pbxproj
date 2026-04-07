@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		1D54B5D76D432DEE34EF1E4B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D17434D4DEF63C851C5C7 /* SettingsView.swift */; };
 		1EE63DEEC96D8EDB380E0BE8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1131EAB381F6F990F9CA151D /* WidgetKit.framework */; };
 		2D24646A94692DB2FFFFA477 /* AppEnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B670051D66E9C6463A0F2EF9 /* AppEnvironmentTests.swift */; };
+		35591244DD11841A2EEF8768 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8E2D025422CE313A0D7396 /* HapticManager.swift */; };
 		3925D7C7396BB77C139D1148 /* TemplateAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D473AA54F233F1C22B68E26D /* TemplateAppUITests.swift */; };
 		3CC4290F54F8E18D776AC647 /* MoodFlicker2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FD5CB67FB3D892C92D970 /* MoodFlicker2App.swift */; };
 		451C086562199F8E96EE1E3B /* MoodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45B00F2E86B321F8C89B63 /* MoodRepository.swift */; };
@@ -117,6 +118,7 @@
 		C21D383EC1973C42A66AA8DE /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		C58ACEBA7C8812AECC9AB3AF /* BuildConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfiguration.swift; sourceTree = "<group>"; };
 		CC4D59EDAA009B201FE6E7FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC8E2D025422CE313A0D7396 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		CE61C04E7C5FC5CA59AEE86E /* MoodEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntry.swift; sourceTree = "<group>"; };
 		D473AA54F233F1C22B68E26D /* TemplateAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAppUITests.swift; sourceTree = "<group>"; };
 		DD9E25EA785BB813CEBA9F81 /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				2C695DECA97BFE1DC18E0C43 /* Auth */,
+				4791D2828C561E312EC1500E /* Haptics */,
 				479E2B9230DD22ABE7932E57 /* Logging */,
 				5550909476BBA05165CF0357 /* Networking */,
 				DE4CF25C1E7009251F72C3AD /* Persistence */,
@@ -272,6 +275,14 @@
 				AFC7EC5BC575E96EBDC23645 /* Theme.swift */,
 			);
 			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		4791D2828C561E312EC1500E /* Haptics */ = {
+			isa = PBXGroup;
+			children = (
+				CC8E2D025422CE313A0D7396 /* HapticManager.swift */,
+			);
+			path = Haptics;
 			sourceTree = "<group>";
 		};
 		479E2B9230DD22ABE7932E57 /* Logging */ = {
@@ -552,7 +563,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					1B3B2C5B33C138F94377DBAD = {
 						DevelopmentTeam = "";
@@ -650,6 +661,7 @@
 				0ABF0ED702689758B5E12981 /* CSVExportService.swift in Sources */,
 				D413E54E3B59A038FC96E1CD /* Endpoint.swift in Sources */,
 				87CC31FFCD60F0D9A952EF2D /* HTTPMethod.swift in Sources */,
+				35591244DD11841A2EEF8768 /* HapticManager.swift in Sources */,
 				51E72A353D9C3478492C44F5 /* HealthAPI.swift in Sources */,
 				6EC9C2C8CBA08157FE96992F /* HealthStatus.swift in Sources */,
 				F3792811E353E95E85C0D510 /* HealthView.swift in Sources */,

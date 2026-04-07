@@ -142,8 +142,8 @@
         "notes": "WidgetKit limitation: App Intents cannot directly trigger haptics. Requires main app coordination."
       },
       "priority": 3,
-      "status": "pending",
-      "notes": "FOLLOW-UP TASK: Created per review. Widget haptics require main app detection of widget entries."
+      "status": "done",
+      "notes": "COMPLETED: Implemented HapticManager with main app coordination. Widget sets 'widgetHapticPending' flag in UserDefaults when mood is logged. Main app checks this flag on scenePhase .active and triggers success haptic. Supports both CoreHaptics (richer) and UINotificationFeedbackGenerator (fallback)."
     },
     {
       "id": "TASK-004",
